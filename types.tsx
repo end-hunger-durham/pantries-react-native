@@ -3,15 +3,17 @@ export type RootStackParamList = {
   NotFound: undefined;
 };
 
+export type BottomTabs = "Map" | "List";
+
 export type BottomTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Map: undefined;
+  List: undefined;
 };
 
 export type TabOneParamList = {
-  TabOneScreen: undefined;
+  Map: undefined;
 };
 
 export type TabTwoParamList = {
-  TabTwoScreen: undefined;
+  List: undefined;
 };

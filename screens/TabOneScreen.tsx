@@ -1,15 +1,28 @@
 import * as React from 'react';
 import { StyleSheet } from 'react-native';
+import MapView from 'react-native-web-google-maps';
 
 import EditScreenInfo from '../components/EditScreenInfo';
+
+import { Dimensions } from 'react-native';
 import { Text, View } from '../components/Themed';
 
 export default function TabOneScreen() {
+  const camera = {
+    center: { latitude: 35.996543666002445, longitude: -78.90108037808307 },
+    heading: 90,
+    pitch: 45,
+    zoom: 11.5,
+    altitude: 1000,
+  };
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabOneScreen.js" />
+      <MapView
+        camera={camera}
+        googleMapsApiKey="test"
+        onMapReady={() => console.log("TEST")}
+        style={styles.mapStyle}
+      />
     </View>
   );
 }
@@ -28,5 +41,9 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  mapStyle: {
+    width: Dimensions.get('window').width,
+    height: Dimensions.get('window').height,
   },
 });
