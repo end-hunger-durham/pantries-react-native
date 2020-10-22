@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "pantries-native",
-    "slug": "pantries-native",
+    "name": "pantries-react-native",
+    "slug": "pantries-react-native",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
