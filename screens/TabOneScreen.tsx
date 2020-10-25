@@ -1,6 +1,6 @@
 import * as React from 'react';
-import { Platform, StyleSheet } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
+import { Platform, StyleSheet, Text } from 'react-native';
+import MapView, { Callout, Marker } from 'react-native-maps';
 import { View } from '../components/Themed';
 
 export default function TabOneScreen() {
@@ -8,7 +8,7 @@ export default function TabOneScreen() {
     center: { latitude: 35.996543666002445, longitude: -78.90108037808307 },
     heading: 45,
     pitch: 45,
-    zoom: 13.5,
+    zoom: 12.5,
     altitude: 0, // ignored by google maps
   };
   const platformProps = {
@@ -29,8 +29,18 @@ export default function TabOneScreen() {
         <Marker
           coordinate={{ latitude: 35.9945931, longitude: -78.8754963 }}
           onPress={() => console.log('marker')}
-          title="MARKER"
+          title="Default Title"
+          description="This displays when no callout is specified"
         />
+        <Marker
+          coordinate={{ latitude: 35.9637641, longitude: -78.91772979999999 }}
+          onPress={() => console.log('marker')}
+          title="Custom Callout"
+        >
+          <Callout>
+            <Text>{"This is a custom callout"}</Text>
+          </Callout>
+        </Marker>
       </MapView>
     </View>
   );
