@@ -38,7 +38,7 @@ export default function BottomTabNavigator() {
   return (
     <BottomTab.Navigator
       initialRouteName="Map"
-      tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+      screenOptions={{ tabBarActiveTintColor: Colors[colorScheme].tint }}>
         {tabs.map(({ name, component, tabBarIcon }) => 
           <BottomTab.Screen key={name} name={name} component={component} options={{ tabBarIcon }} />
         )}
@@ -46,7 +46,7 @@ export default function BottomTabNavigator() {
   );
 }
 
-function TabBarIcon(props: { name: string; color: string }) {
+function TabBarIcon(props: { name: 'ios-map' | 'ios-list'; color: string }) {
   return <Ionicons size={30} style={{ marginBottom: -3 }} {...props} />;
 }
 
