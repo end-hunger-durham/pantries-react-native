@@ -3,11 +3,11 @@ export type RootStackParamList = {
   NotFound: undefined;
 };
 
-export type BottomTabs = "Map" | "List";
+export type BottomTabs = "MapTab" | "ListTab";
 
 export type BottomTabParamList = {
-  Map: undefined;
-  List: undefined;
+  MapTab: undefined;
+  ListTab: undefined;
 };
 
 export type TabOneParamList = {
@@ -16,4 +16,23 @@ export type TabOneParamList = {
 
 export type TabTwoParamList = {
   List: undefined;
+};
+
+export type Pantry = {
+  geometry: {
+      coordinates: [number, number],
+  },
+  properties: {
+      comments: string;
+      fulladdr: string;
+      last_edited_date: string;
+      name: string;
+      operdays: string;
+      operhours: string;
+      phone: string | null;
+      pocemail: string | null;
+      pocname: string | null;
+      pocphone: string | null;
+      readytoeatmeals: string | null;
+  },
 };
