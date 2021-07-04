@@ -10,7 +10,7 @@ import { Pantry } from '../types';
 
 const PantryListItem = ({ pantry }: { pantry: Pantry }) => (
   <View style={ tw`border-b border-gray-300 py-4 w-full flex flex-row items-center` }>
-    <View style={ tw.style('mr-2', { width: "85%" }) }>
+    <View style={ tw.style('mr-2', { width: "90%" }) }>
       <Text style={ tw`pb-1 font-bold` }>{pantry.properties.name}</Text>
       <Text style={ tw`pb-1` }>{pantry.properties.operdays}</Text>
       <Text>{pantry.properties.operhours}</Text>
